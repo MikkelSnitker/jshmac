@@ -8,11 +8,11 @@ const IPAD = 0x36;
 const OPAD = 0x5C;
 
 export default class {
-    constructor(private hash: HashStatic) {
+    constructor(public hash: HashStatic) {
 
     }
 
-    sign(key: Uint8Array, message: Uint8Array): Uint8Array {
+    public sign(key: Uint8Array, message: Uint8Array): Uint8Array {
 
         if (key.byteLength > this.hash.BLOCK_LENGTH) {
             key = this.hash.hash(key);
